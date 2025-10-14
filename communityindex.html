@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRA Community</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Inter font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'detra-dark': '#1e293b', // Slate-800 equivalent for the premium dark look
+                        'detra-primary': '#4f46e5', // A vibrant blue/indigo for accents
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<!-- The page uses a dark slate background, similar to the image, and centers the main content -->
+<body class="bg-detra-dark min-h-screen font-sans antialiased">
+
+    <!-- Sticky Top Navbar (Matching the App's Header) -->
+    <nav class="flex justify-between items-center px-4 py-4 sticky top-0 bg-detra-dark z-20 shadow-xl">
+        
+        <!-- Logo/Link area wrapped in <a> tag -->
+        <a href="https://detrafinal.flutterflow.app/" class="items-center text-white flex transition duration-150 hover:text-gray-300">
+            <!-- Logo/Icon Placeholder (Using an icon similar to the app's logo) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400 mr-2 transition duration-150 hover:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20h4m-4 0v-2c0-.656.126-1.283.356-1.857M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-5a4 4 0 100 8 4 4 0 000-8z"/>
+            </svg>
+            <span class="text-2xl font-bold">DETRA</span>
+        </a>
+        <!-- NOTE: Replace YOUR_FLUTTERFLOW_URL_HERE with the actual URL to your FlutterFlow app! -->
+
+        <!-- Notification and Settings Icons (From the app screenshot) -->
+        <div class="flex space-x-2">
+            <button class="text-gray-400 hover:text-white transition duration-150 p-2 rounded-full hover:bg-gray-700/50">
+                <!-- Notification Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-2.81A7.001 7.001 0 0017 8V4h-4v4c0 1.298-.48 2.502-1.353 3.425L10 14h4l-1.405 2.81A7.001 7.001 0 0017 20h2a1 1 0 001-1v-2h-5z"/>
+                </svg>
+            </button>
+            <button class="text-gray-400 hover:text-white transition duration-150 p-2 rounded-full hover:bg-gray-700/50">
+                <!-- Settings Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO IMAGE BANNER (Full Width) -->
+    <div class="relative w-full h-96 overflow-hidden bg-gray-600 shadow-xl">
+        
+        <!-- Background Image with Overlay for Text Contrast -->
+        <div 
+            class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('https://www.shutterstock.com/image-photo/adults-learning-sign-language-deaf-600nw-1873191883.jpg');"
+            onerror="this.style.backgroundImage = 'url(\'https://placehold.co/1200x500/22223b/D3D3D3/png?text=Add+Image+of+Sign+Language\')'"
+        >
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+
+        <!-- Centered Text Content -->
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-8">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6">
+                Welcome to the <span class="text-detra-primary">Community</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-200 max-w-md">
+                Share your experiences, find learning partners, and grow with DETRA.
+            </p>
+        </div>
+    </div>
+    <!-- END HERO IMAGE BANNER -->
+
+    <!-- Main App Content Container - Now centered text alignment for headings -->
+    <div class="max-w-xl mx-auto px-4 pt-8 pb-16 mt-12 text-center">
+        
+        <!-- NEW COMMUNITY FEED HEADING -->
+        <h2 class="text-3xl font-extrabold text-white mb-8">
+            Community Discussions
+        </h2>
+        
+        <!-- New Post Area - Highly rounded, clean white card (Text alignment explicitly set to left for readability) -->
+        <div class="bg-white p-6 mb-8 rounded-3xl shadow-2xl transition duration-300 hover:shadow-3xl text-left">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Share Your Thoughts</h2>
+            <textarea
+                class="w-full p-3 border border-gray-200 rounded-xl focus:ring-detra-primary focus:border-detra-primary focus:outline-none transition duration-150"
+                rows="3"
+                placeholder="What new signs did you learn today? Ask a question, or share an inspiring story..."
+            ></textarea>
+            <div class="flex justify-end mt-4">
+                <button
+                    class="bg-detra-primary text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-indigo-600 transition duration-150 transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-detra-primary/50"
+                >
+                    Post to Community
+                </button>
+            </div>
+        </div>
+        <!-- End New Post Area -->
+
+        <!-- Community Feed Section Title (Now acting as a Subtitle) -->
+        <h3 class="text-2xl font-bold text-white mb-6">Recent Discussions</h3>
+
+        <!-- Mock Post 1 (Placeholder) - Text alignment explicitly set to left for readability -->
+        <div class="bg-white p-6 mb-6 rounded-3xl shadow-2xl text-left">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-lg font-bold text-gray-500 mr-3">
+                    A
+                </div>
+                <div>
+                    <p class="font-semibold text-gray-800">ASL Enthusiast</p>
+                    <p class="text-xs text-gray-500">2 hours ago</p>
+                </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+                Just wanted to share how amazing the live translation feature is! It made communicating with my new colleague so much smoother. Has anyone used it for formal presentations yet?
+            </p>
+            <div class="flex space-x-4 text-gray-500 text-sm">
+                <button class="hover:text-detra-primary transition duration-150">👍 14 Likes</button>
+                <button class="hover:text-detra-primary transition duration-150">💬 3 Comments</button>
+            </div>
+        </div>
+        <!-- End Mock Post 1 -->
+
+        <!-- Mock Post 2 (Placeholder) - Text alignment explicitly set to left for readability -->
+        <div class="bg-white p-6 mb-6 rounded-3xl shadow-2xl text-left">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-lg font-bold text-gray-500 mr-3">
+                    B
+                </div>
+                <div>
+                    <p class="font-semibold text-gray-800">BeginnerSigner24</p>
+                    <p class="text-xs text-gray-500">5 hours ago</p>
+                </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+                I'm trying to learn the sign for "Hackathon." Does anyone know the standard ASL sign, or is there a fingerspelling equivalent that's commonly used? Any help would be great!
+            </p>
+            <div class="flex space-x-4 text-gray-500 text-sm">
+                <button class="hover:text-detra-primary transition duration-150">👍 8 Likes</button>
+                <button class="hover:text-detra-primary transition duration-150">💬 6 Comments</button>
+            </div>
+        </div>
+        <!-- End Mock Post 2 -->
+
+        <!-- Load More Button (Simulating Pagination) -->
+        <div class="text-center my-8">
+            <button
+                class="bg-gray-700 text-white font-semibold py-2 px-8 rounded-full shadow-lg hover:bg-gray-600 transition duration-150 transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-gray-600/50"
+            >
+                Load More Discussions
+            </button>
+        </div>
+
+        <!-- Placeholder for End of Posts -->
+        <div class="text-center mt-10 text-gray-500">
+            <p>— End of Feed. Check back soon for more discussions —</p>
+        </div>
+
+    </div>
+    <!-- End Main App Content Container -->
+
+    <!-- Footer Section -->
+    <footer class="mt-16 border-t border-gray-700/50 pt-8 pb-4 text-center text-gray-500 text-sm max-w-xl mx-auto px-4">
+        <p class="mb-2">&copy; 2025 DETRA - Deaf Translation Assistant. All rights reserved.</p>
+        <div class="flex justify-center space-x-4">
+            <a href="#" class="hover:text-white transition duration-150">Privacy Policy</a>
+            <span class="text-gray-600">|</span>
+            <a href="#" class="hover:text-white transition duration-150">Terms of Service</a>
+            <span class="text-gray-600">|</span>
+            <a href="#" class="hover:text-white transition duration-150">Support</a>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+</body>
+</html>
