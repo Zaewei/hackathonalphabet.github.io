@@ -8,6 +8,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
+
+        /* New buttons styling */
+        .top-left-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: #1e293b;
+            color: #111;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .above-camera-btn {
+            display: inline-block;
+            background: #1e293b;
+            color: #111;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
     </style>
     
     <!-- Load MediaPipe Dependencies -->
@@ -16,6 +43,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-50 flex flex-col items-center p-4 min-h-screen">
+    
+  <!-- Top-left corner button -->
+  <a href="https://detrafinal.flutterflow.app/" class="top-left-btn">Home</a>
+
+  <!-- Button above the camera -->
+  <a href="https://kejds.github.io/DETRA_SIGN/" class="above-camera-btn">Switch to Words</a>
 
     <h1 class="text-4xl font-extrabold text-blue-800 my-6 shadow-sm">
         <span class="inline-block transform transition-transform duration-300 hover:scale-105">🧠</span> 
