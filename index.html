@@ -4,66 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASL Gesture Interpreter</title>
-    <!-- Load Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { 
+            font-family: 'Inter', sans-serif;
+            /* Ensure body is the container for centering */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
 
         /* New buttons styling */
         .top-left-btn {
             position: fixed;
             top: 10px;
             left: 10px;
-            background: #1e293b;
-            color: #111;
+            background: #1e293b; /* Dark Blue/Gray */
+            color: #ffffff; /* FIX: Changed to White */
             padding: 10px 15px;
             border: none;
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
+            z-index: 10; /* Ensure it stays above other content */
         }
 
+        /* FIX: above-camera-btn text color is now white */
         .above-camera-btn {
             display: inline-block;
-            background: #1e293b;
-            color: #111;
+            background: #1e293b; /* Dark Blue/Gray */
+            color: #ffffff; /* FIX: Changed to White */
             padding: 10px 20px;
             border-radius: 8px;
             font-weight: bold;
             text-decoration: none;
-            margin-bottom: 10px;
+        }
+
+        /* FIX: A new centering container for the above-camera-btn */
+        #above-camera-wrapper {
+            width: 100%; /* Take full width */
+            max-width: 3xl; /* Match max width of the video container */
+            display: flex;
+            justify-content: center; /* Center the button horizontally */
+            margin-bottom: 10px; /* Space below the button */
+        }
+
+        /* Reverting body background for clarity, as you had bg-gray-50 */
+        body.bg-gray-50 {
+             background-color: #f9fafb; /* Tailwind gray-50 */
         }
 
     </style>
     
-    <!-- Load MediaPipe Dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-50 flex flex-col items-center p-4 min-h-screen">
     
-  <!-- Top-left corner button -->
-  <a href="https://detrafinal.flutterflow.app/" class="top-left-btn">Home</a>
+    <a href="https://detrafinal.flutterflow.app/" class="top-left-btn">Home</a>
 
-  <!-- Button above the camera -->
-  <a href="https://kejds.github.io/DETRA_SIGN/" class="above-camera-btn">Switch to Words</a>
+    <div id="above-camera-wrapper" class="w-full max-w-3xl">
+        <a href="https://kejds.github.io/DETRA_SIGN/" class="above-camera-btn">Switch to Words</a>
+    </div>
 
     <h1 class="text-4xl font-extrabold text-blue-800 my-6 shadow-sm">
         <span class="inline-block transform transition-transform duration-300 hover:scale-105">🧠</span> 
         ASL Gesture Interpreter
     </h1>
 
-    <!-- Video and Canvas Container -->
     <div class="relative w-full max-w-3xl aspect-video bg-gray-900 rounded-2xl shadow-xl overflow-hidden mb-6">
-        <!-- Video element (hidden, used as source for MediaPipe) -->
         <video id="webcam" class="absolute inset-0 w-full h-full object-cover transform scale-x-[-1]" autoplay playsinline></video>
-        <!-- Canvas element (draws the mirrored output and landmarks) -->
         <canvas id="output" class="absolute inset-0 w-full h-full"></canvas>
     </div>
 
-    <!-- Status and Current Sign Display -->
     <div class="w-full max-w-3xl flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
         <div id="status" class="w-full text-center sm:text-left text-sm font-medium text-gray-600 bg-gray-200 p-3 rounded-lg shadow-inner">
             Loading Model...
@@ -74,13 +90,11 @@
         </div>
     </div>
 
-    <!-- Live Translation Container -->
     <div id="translationContainer" class="w-full max-w-3xl bg-white p-6 rounded-2xl shadow-2xl border border-blue-100">
         <h2 class="text-2xl font-bold text-blue-700 mb-3">Live Translation:</h2>
         
         <p id="translationText" class="min-h-12 bg-gray-100 p-4 rounded-xl border-2 border-dashed border-gray-300 text-xl font-mono text-gray-800 text-left mb-4">
-            <!-- Translated letters appear here -->
-        </p>
+            </p>
         
         <button onclick="clearTranslation()"
             class="w-full sm:w-auto px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold rounded-xl shadow-lg transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-red-300">
@@ -88,7 +102,6 @@
         </button>
     </div>
 
-    <!-- Link to the separated JavaScript logic -->
     <script src="script.js"></script>
 </body>
 </html>
